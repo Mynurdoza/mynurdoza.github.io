@@ -1,502 +1,823 @@
 <!DOCTYPE html>
-
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>K.M. Mynurdoza — Engineer. Builder. Explorer.</title>
+  <title>K.M. Mynurdoza — Engineer · Builder · Explorer</title>
   <meta name="description"
-    content="Portfolio of K.M. Mynurdoza — Mechanical Engineering student at BUET, focusing on Robotics, Automation, and Multiphysics Simulation." />
+    content="Portfolio of K.M. Mynurdoza — Mechanical Engineering student at BUET, specializing in Robotics, Multiphysics Simulation (FEA/CFD), Automation, and Competitive Programming." />
   <meta name="keywords"
-    content="K.M. Mynurdoza, BUET, Mechanical Engineering, Robotics, Automation, COMSOL, SolidWorks, Portfolio" />
-  <meta property="og:title" content="K.M. Mynurdoza — Engineer. Builder. Explorer." />
+    content="K.M. Mynurdoza, BUET, Mechanical Engineering, Robotics, Automation, COMSOL, SolidWorks, Portfolio, Beyond Horizon, Telescope" />
+  <meta property="og:title" content="K.M. Mynurdoza — Engineer · Builder · Explorer" />
   <meta property="og:description"
-    content="Mechanical Engineering student at BUET — Robotics, Simulation, and beyond." />
+    content="Mechanical Engineering student at BUET — Robotics, Multiphysics Simulation, and beyond." />
   <meta property="og:type" content="website" />
 
+  <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
-    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Outfit:wght@400;500;600;700;800;900&family=Space+Grotesk:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
     rel="stylesheet" />
+  <!-- Font Awesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
   <link rel="stylesheet" href="style.css" />
 </head>
 
 <body>
 
-  <!-- ======= NAV ======= -->
+  <!-- Dynamic Cursor Glow Effect -->
+  <div class="cursor-glow" id="cursor-glow"></div>
 
+  <!-- ======= NAVBAR ======= -->
   <nav id="navbar" role="navigation" aria-label="Main navigation">
     <div class="nav-inner">
+      <a href="#hero" class="nav-logo" id="nav-logo">
+        <span class="logo-mark">KM</span><span class="accent-dot">.</span>
+      </a>
       <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
       <ul class="nav-links" id="nav-links" role="list">
-        <li><a href="#about"        class="nav-link">About</a></li>
-        <li><a href="#education"    class="nav-link">Education</a></li>
-        <li><a href="#skills"       class="nav-link">Skills</a></li>
-        <li><a href="#projects"     class="nav-link">Projects</a></li>
+        <li><a href="#about" class="nav-link">About</a></li>
+        <li><a href="#education" class="nav-link">Education</a></li>
+        <li><a href="#skills" class="nav-link">Skills</a></li>
+        <li><a href="#projects" class="nav-link">Projects</a></li>
         <li><a href="#achievements" class="nav-link">Achievements</a></li>
-        <li><a href="#eca"          class="nav-link">ECA</a></li>
-        <li><a href="#contact"      class="nav-link">Contact</a></li>
+        <li><a href="#eca" class="nav-link">Activities</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
+        <li>
+          <a href="docs/Master_CV_KM_Mynurdoza_2.pdf" target="_blank" class="nav-cv-btn">
+            <i class="fa-solid fa-file-pdf"></i> Resume
+          </a>
+        </li>
       </ul>
     </div>
   </nav>
 
   <!-- ======= HERO ======= -->
-
   <section id="hero" class="hero" aria-label="Hero section">
-    <div class="hero-bg">
-      <canvas id="stars-canvas"></canvas>
-      <div class="hero-glow hero-glow-1"></div>
-      <div class="hero-glow hero-glow-2"></div>
+    <canvas id="particles-canvas"></canvas>
+    <div class="hero-mesh"></div>
+    <div class="hero-radial-glow"></div>
+
+    <div class="hero-content">
+      <div class="hero-photo-container">
+        <div class="hero-photo-ring"></div>
+        <div class="hero-photo-orbit">
+          <span class="orbit-node node-1"></span>
+          <span class="orbit-node node-2"></span>
+        </div>
+        <div class="hero-photo" id="hero-photo-slot">
+          <img src="images/profile.jpg?v=3" alt="K.M. Mynurdoza" id="hero-img"
+            onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
+          <div class="photo-fallback"><span>KM</span></div>
+        </div>
+        <div class="hero-photo-pulse"></div>
+      </div>
+
+      <div class="hero-text">
+        <div class="hero-greeting">
+          <span class="greeting-badge"><i class="fa-solid fa-circle-dot live-dot"></i> Available for Research &amp; Opportunities</span>
+        </div>
+        <h1 class="hero-name">K.M. <span class="gradient-text">Mynurdoza</span></h1>
+        <p class="hero-tagline">
+          <span class="tagline-word">Engineer</span>
+          <span class="tagline-dot"></span>
+          <span class="tagline-word">Builder</span>
+          <span class="tagline-dot"></span>
+          <span class="tagline-word">Explorer</span>
+        </p>
+        <p class="hero-sub">
+          Mechanical Engineering @ <strong>BUET</strong> &nbsp;&bull;&nbsp; Robotics &amp; Automation &nbsp;&bull;&nbsp; Multiphysics Simulation
+        </p>
+
+        <div class="hero-actions">
+          <a href="#projects" class="btn btn-primary" id="hero-cta-projects">
+            <i class="fa-solid fa-rocket"></i> Explore Work
+          </a>
+          <a href="#contact" class="btn btn-glass" id="hero-cta-contact">
+            <i class="fa-solid fa-paper-plane"></i> Get in Touch
+          </a>
+          <a href="docs/Master_CV_KM_Mynurdoza_2.pdf" target="_blank" class="btn btn-outline" id="hero-cta-cv">
+            <i class="fa-solid fa-file-arrow-down"></i> View CV
+          </a>
+        </div>
+
+        <div class="hero-socials">
+          <a href="mailto:mynurdoza@gmail.com" class="social-icon" aria-label="Email" id="social-email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://github.com/M000nwalker" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="GitHub" id="social-github">
+            <i class="fa-brands fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/mynurdoza/" target="_blank" rel="noopener noreferrer" class="social-icon" aria-label="LinkedIn" id="social-linkedin">
+            <i class="fa-brands fa-linkedin-in"></i>
+          </a>
+        </div>
+      </div>
     </div>
 
-<div class="hero-content">
-
-  <div class="hero-photo-wrap">
-    <div class="hero-photo-ring"></div>
-    <div class="hero-photo" id="hero-photo-slot">
-      <img src="images/profile.jpg?v=2" alt="K.M. Mynurdoza" id="hero-img"
-           onerror="this.style.display='none';this.parentElement.classList.add('no-photo')" />
-      <div class="photo-fallback"><span>KM</span></div>
-    </div>
-    <div class="hero-photo-orbit"></div>
-  </div>
-
-  <h1 class="hero-name">K.M. <span class="name-highlight">Mynurdoza</span></h1>
-  <p class="hero-tagline">
-    Engineer<span class="tagline-sep">&#183;</span>Builder<span class="tagline-sep">&#183;</span>Explorer<span class="tagline-sep">&#183;</span>Traveller
-  </p>
-  <p class="hero-sub">
-    Mechanical Engineering @ BUET &nbsp;|&nbsp; Robotics &amp; Automation &nbsp;|&nbsp; Multiphysics Simulation
-  </p>
-
-  <div class="hero-actions">
-    <a href="#projects" class="btn btn-primary" id="hero-cta-projects">
-      <i class="fa-solid fa-rocket"></i> View Projects
+    <a href="#about" class="scroll-indicator" aria-label="Scroll to About section">
+      <div class="scroll-mouse">
+        <div class="scroll-wheel"></div>
+      </div>
+      <span>Scroll</span>
     </a>
-    <a href="#contact" class="btn btn-outline" id="hero-cta-contact">
-      <i class="fa-solid fa-paper-plane"></i> Get in Touch
-    </a>
-  </div>
-
-  <div class="hero-socials">
-    <a href="mailto:mynurdoza@gmail.com" class="social-icon" aria-label="Email" id="social-email">
-      <i class="fa-solid fa-envelope"></i>
-    </a>
-    <a href="https://github.com/M000nwalker" target="_blank" class="social-icon" aria-label="GitHub" id="social-github">
-      <i class="fa-brands fa-github"></i>
-    </a>
-    <a href="https://www.linkedin.com/in/k-m-mynurdoza-399513441/" target="_blank" class="social-icon" aria-label="LinkedIn" id="social-linkedin">
-      <i class="fa-brands fa-linkedin-in"></i>
-    </a>
-  </div>
-</div>
-
-<a href="#about" class="scroll-down" aria-label="Scroll to About section">
-  <i class="fa-solid fa-chevron-down"></i>
-</a>
-
   </section>
 
   <!-- ======= ABOUT ======= -->
-
-  <section id="about" class="section about-section" aria-label="About section">
+  <section id="about" class="section" aria-label="About section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">01 &mdash; About</span>
         <h2 class="section-title">Who Am I?</h2>
+        <div class="section-title-line"></div>
       </div>
 
-  <div class="about-grid">
-    <div class="about-photo-wrap">
-      <div class="about-photo">
-        <img src="images/about.jpg" alt="K.M. Mynurdoza" id="about-img" />
-        <div class="about-photo-overlay"></div>
-      </div>
-      <div class="about-photo-card">
-        <i class="fa-solid fa-location-dot"></i>
-        Dhaka, Bangladesh
+      <div class="about-grid">
+        <div class="about-photo-wrap">
+          <div class="about-photo glass-card">
+            <img src="images/about.jpg" alt="K.M. Mynurdoza at BUET" id="about-img" />
+            <div class="about-photo-shine"></div>
+          </div>
+          <div class="about-location-badge glass-card">
+            <i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh
+          </div>
+        </div>
+
+        <div class="about-text">
+          <p class="about-lead">
+            I'm a <strong>Mechanical Engineering undergraduate at Bangladesh University of Engineering &amp; Technology (BUET)</strong> driven by the desire to design, simulate, and build intelligent physical systems that bridge mechanical precision and embedded autonomy.
+          </p>
+          <p>
+            My engineering work spans across <strong>multiphysics FEA/CFD simulation</strong> (thermal-structural interactions, viscoelasticity, convective heat transfer) and <strong>full-stack robotic prototyping</strong> (precision gear train fabrication, real-time celestial tracking kinematics, and embedded microcontrollers like ESP32/STM32).
+          </p>
+          <p>
+            Beyond mechanical design, I am an enthusiastic competitive programmer who has qualified for Round 1 of <strong>Google Code Jam</strong> and participated in <strong>Google Kick Start</strong>. I am also an officially rated <strong>FIDE chess player</strong>, appointed <strong>Chess.com Campus Ambassador</strong> for BUET, and an avid traveller who represented Bangladesh at the International Blockchain Olympiad in Amsterdam.
+          </p>
+
+          <div class="about-stats">
+            <div class="stat-item glass-card">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-count="15">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-label">Competitions</span>
+            </div>
+            <div class="stat-item glass-card">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-count="8">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-label">Honors &amp; Awards</span>
+            </div>
+            <div class="stat-item glass-card">
+              <div class="stat-number-wrap">
+                <span class="stat-number" data-count="3">0</span><span class="stat-plus">+</span>
+              </div>
+              <span class="stat-label">Years of Research</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="about-text">
-      <p class="about-lead">
-        I'm a <strong>Mechanical Engineering undergraduate at BUET</strong> with a passion for understanding and
-        improving physical systems through digital modeling, simulation, and intelligent control.
-      </p>
-      <p>
-        From designing precision motion control systems to integrating embedded systems with modern
-        robotics platforms, I work across both hardware and software. My experience with multiphysics simulation
-        (FEA, thermal &amp; fluid coupling) allows me to analyze and validate mechanical behavior before a single
-        bolt is turned.
-      </p>
-      <p>
-        Outside the lab, I enjoy playing chess and travelling to explore new places.
-      </p>
-
-    </div>
-  </div>
-</div>
-
   </section>
 
   <!-- ======= EDUCATION ======= -->
-
-  <section id="education" class="section edu-section" aria-label="Education section">
+  <section id="education" class="section" aria-label="Education section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">02 &mdash; Education</span>
         <h2 class="section-title">Academic Journey</h2>
+        <div class="section-title-line"></div>
       </div>
 
-  <div class="timeline">
+      <div class="timeline">
+        <div class="timeline-track"></div>
 
-    <div class="timeline-item" id="edu-buet">
-      <div class="timeline-marker">
-        <div class="timeline-dot active"></div>
-        <div class="timeline-line"></div>
-      </div>
-      <div class="timeline-card">
-        <div class="timeline-card-header">
-          <div>
-            <h3>B.Sc. Mechanical Engineering</h3>
-            <p class="timeline-org">Bangladesh University of Engineering &amp; Technology (BUET)</p>
+        <div class="timeline-item" id="edu-buet">
+          <div class="timeline-marker">
+            <div class="timeline-dot active"></div>
           </div>
-          <div class="timeline-meta">
-            <span class="timeline-date">Nov 2023 – Jul 2028 (Expected)</span>
+          <div class="timeline-card glass-card">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-degree">Undergraduate Studies</span>
+                <h3>B.Sc. in Mechanical Engineering</h3>
+                <p class="timeline-org">Bangladesh University of Engineering &amp; Technology (BUET)</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> Nov 2023 &ndash; Jul 2028 (Expected)</span>
+                <span class="badge-active"><i class="fa-solid fa-circle-check"></i> Level-3, Term-2</span>
+              </div>
+            </div>
+            <p class="timeline-body">
+              Specializing in Robotics, Automation, and Multiphysics Simulation. Rigorous coursework in finite element analysis, computational fluid dynamics, advanced control systems, kinematics of machinery, thermodynamics, and heat transfer.
+            </p>
+            <div class="tag-row">
+              <span class="tag">FEA &amp; CFD</span>
+              <span class="tag">Robotics &amp; Control</span>
+              <span class="tag">Thermodynamics</span>
+              <span class="tag">Heat Transfer</span>
+              <span class="tag">Machine Design</span>
+              <span class="tag">Fluid Dynamics</span>
+            </div>
           </div>
         </div>
-        <p class="timeline-body">Currently in Level-3, Term-2. Focusing on Robotics, Automation, and
-          Multiphysics Simulation, with a strong foundation in thermodynamics, heat transfer, fluid mechanics, and control systems.</p>
-        <div class="timeline-tags">
-          <span class="ttag">FEA</span>
-          <span class="ttag">Robotics</span>
-          <span class="ttag">Thermodynamics</span>
-          <span class="ttag">Heat Transfer</span>
-          <span class="ttag">Control Systems</span>
-          <span class="ttag">Fluid Mechanics</span>
+
+        <div class="timeline-item" id="edu-scc">
+          <div class="timeline-marker">
+            <div class="timeline-dot"></div>
+          </div>
+          <div class="timeline-card glass-card">
+            <div class="timeline-header">
+              <div>
+                <span class="timeline-degree">Secondary &amp; Higher Secondary</span>
+                <h3>Science with Academic Distinction</h3>
+                <p class="timeline-org">Sylhet Cadet College (SCC)</p>
+              </div>
+              <div class="timeline-meta">
+                <span class="timeline-date"><i class="fa-regular fa-calendar"></i> 2017 &ndash; 2023</span>
+                <span class="badge-scholar"><i class="fa-solid fa-award"></i> Double Talentpool Scholar</span>
+              </div>
+            </div>
+            <p class="timeline-body">
+              Completed rigorous academic and disciplined leadership training at Sylhet Cadet College. Awarded prestigious Government Talentpool Merit Scholarships by the Ministry of Education in both SSC (2020) and HSC (2022).
+            </p>
+            <div class="tag-row">
+              <span class="tag">HSC 2022 (GPA 5.00)</span>
+              <span class="tag">SSC 2020 (GPA 5.00)</span>
+              <span class="tag">Talentpool Scholarship</span>
+              <span class="tag">House Chess Champion</span>
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="timeline-item" id="edu-scc">
-      <div class="timeline-marker">
-        <div class="timeline-dot"></div>
-      </div>
-      <div class="timeline-card">
-        <div class="timeline-card-header">
-          <div>
-            <h3>SSC &amp; HSC — Science</h3>
-            <p class="timeline-org">Sylhet Cadet College</p>
-          </div>
-          <div class="timeline-meta">
-            <span class="timeline-date">Mar 2016 – Dec 2022</span>
-            <span class="badge-chip">Talentpool Scholarship Awardee</span>
-          </div>
-        </div>
-        <p class="timeline-body">Completed secondary and higher secondary education with distinction at Sylhet Cadet College. Awarded the Talentpool Scholarship in both SSC and HSC.</p>
-      </div>
-    </div>
-
-  </div>
-</div>
-
   </section>
 
   <!-- ======= SKILLS ======= -->
-
-  <section id="skills" class="section skills-section" aria-label="Skills section">
+  <section id="skills" class="section" aria-label="Skills section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">03 &mdash; Skills</span>
-        <h2 class="section-title">Tools &amp; Expertise</h2>
+        <h2 class="section-title">Technical Expertise</h2>
+        <div class="section-title-line"></div>
       </div>
 
-  <div class="skills-grid">
+      <div class="skills-grid">
+        <div class="skill-card glass-card" id="skill-simulation">
+          <div class="skill-card-shine"></div>
+          <div class="skill-icon-wrap"><i class="fa-solid fa-atom"></i></div>
+          <h3>CAE &amp; Multiphysics Simulation</h3>
+          <p class="skill-card-desc">Coupled field simulations, stress validation, and thermal fatigue analysis.</p>
+          <div class="skill-pills">
+            <span class="pill">COMSOL Multiphysics</span>
+            <span class="pill">ANSYS Fluent</span>
+            <span class="pill">FEA</span>
+            <span class="pill">CFD</span>
+            <span class="pill">Thermal-Structural Coupling</span>
+            <span class="pill">Morrow Fatigue</span>
+          </div>
+        </div>
 
-    <div class="skill-card" id="skill-simulation">
-      <div class="skill-card-icon"><i class="fa-solid fa-atom"></i></div>
-      <h3>Simulation &amp; Analysis</h3>
-      <div class="skill-pills">
-        <span class="pill">COMSOL Multiphysics</span>
-        <span class="pill">ANSYS</span>
-        <span class="pill">FEA</span>
-        <span class="pill">CFD</span>
+        <div class="skill-card glass-card" id="skill-cad">
+          <div class="skill-card-shine"></div>
+          <div class="skill-icon-wrap"><i class="fa-solid fa-drafting-compass"></i></div>
+          <h3>CAD &amp; Prototyping</h3>
+          <p class="skill-card-desc">High-precision 3D assemblies, kinematic synthesis, and physical fabrication.</p>
+          <div class="skill-pills">
+            <span class="pill">SolidWorks</span>
+            <span class="pill">AutoCAD</span>
+            <span class="pill">GD&amp;T</span>
+            <span class="pill">Gear Train Synthesis</span>
+            <span class="pill">3D Printing (FDM)</span>
+            <span class="pill">Laser Cutting</span>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card" id="skill-robotics">
+          <div class="skill-card-shine"></div>
+          <div class="skill-icon-wrap"><i class="fa-solid fa-robot"></i></div>
+          <h3>Robotics &amp; Embedded Systems</h3>
+          <p class="skill-card-desc">Autonomous motion control, real-time kinematics, and microcontroller firmware.</p>
+          <div class="skill-pills">
+            <span class="pill">ROS 2</span>
+            <span class="pill">Embedded C/C++</span>
+            <span class="pill">ESP32 / STM32</span>
+            <span class="pill">Closed-Loop PID</span>
+            <span class="pill">Stepper/Servo Control</span>
+            <span class="pill">Sensor Interfacing</span>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card" id="skill-programming">
+          <div class="skill-card-shine"></div>
+          <div class="skill-icon-wrap"><i class="fa-solid fa-code"></i></div>
+          <h3>Scientific Computing &amp; Code</h3>
+          <p class="skill-card-desc">Algorithmic problem solving, numerical methods, and high-performance software.</p>
+          <div class="skill-pills">
+            <span class="pill">Python (NumPy, SciPy)</span>
+            <span class="pill">C++</span>
+            <span class="pill">C</span>
+            <span class="pill">MATLAB</span>
+            <span class="pill">TypeScript</span>
+            <span class="pill">Runge-Kutta ODEs</span>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card" id="skill-tools">
+          <div class="skill-card-shine"></div>
+          <div class="skill-icon-wrap"><i class="fa-solid fa-screwdriver-wrench"></i></div>
+          <h3>Developer &amp; Research Tools</h3>
+          <p class="skill-card-desc">Modern engineering stack for version control, document production, and deployment.</p>
+          <div class="skill-pills">
+            <span class="pill">Git / GitHub</span>
+            <span class="pill">Linux / UNIX</span>
+            <span class="pill">LaTeX Typography</span>
+            <span class="pill">VS Code</span>
+            <span class="pill">Electron</span>
+            <span class="pill">Vite</span>
+          </div>
+        </div>
+
+        <div class="skill-card glass-card" id="skill-experimental">
+          <div class="skill-card-shine"></div>
+          <div class="skill-icon-wrap"><i class="fa-solid fa-flask-vial"></i></div>
+          <h3>Laboratory &amp; Leadership</h3>
+          <p class="skill-card-desc">Mechanical test benches, technical writing, leadership, and project execution.</p>
+          <div class="skill-pills">
+            <span class="pill">Tensile &amp; Hardness Testing</span>
+            <span class="pill">Sensor Calibration</span>
+            <span class="pill">Technical Writing</span>
+            <span class="pill">Project Leadership</span>
+            <span class="pill">Budget Management</span>
+          </div>
+        </div>
       </div>
     </div>
-
-    <div class="skill-card" id="skill-cad">
-      <div class="skill-card-icon"><i class="fa-solid fa-drafting-compass"></i></div>
-      <h3>CAD &amp; Design</h3>
-      <div class="skill-pills">
-        <span class="pill">SolidWorks</span>
-        <span class="pill">AutoCAD</span>
-        <span class="pill">Parametric Modelling</span>
-        <span class="pill">Tolerance Analysis</span>
-      </div>
-    </div>
-
-    <div class="skill-card" id="skill-robotics">
-      <div class="skill-card-icon"><i class="fa-solid fa-robot"></i></div>
-      <h3>Robotics &amp; Embedded</h3>
-      <div class="skill-pills">
-        <span class="pill">ROS 2</span>
-        <span class="pill">Sensor Integration</span>
-        <span class="pill">Microcontroller</span>
-      </div>
-    </div>
-
-    <div class="skill-card" id="skill-programming">
-      <div class="skill-card-icon"><i class="fa-solid fa-code"></i></div>
-      <h3>Programming</h3>
-      <div class="skill-pills">
-        <span class="pill">Python</span>
-        <span class="pill">C++</span>
-        <span class="pill">C</span>
-        <span class="pill">MATLAB</span>
-        <span class="pill">Embedded Systems</span>
-      </div>
-    </div>
-
-  </div>
-</div>
-
   </section>
 
   <!-- ======= PROJECTS ======= -->
-
-  <section id="projects" class="section projects-section" aria-label="Projects section">
+  <section id="projects" class="section" aria-label="Projects section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">04 &mdash; Projects</span>
-        <h2 class="section-title">What I've Built</h2>
+        <h2 class="section-title">Engineering Innovations</h2>
+        <div class="section-title-line"></div>
       </div>
 
-  <div class="projects-showcase">
-    <div class="project-card featured" id="project-beyond-horizon">
-      <div class="project-glow"></div>
-      <div class="project-content">
-        <div class="project-tag-row">
-          <span class="project-featured-badge"><i class="fa-solid fa-star"></i> Featured</span>
-          <span class="project-year">2024 – 2026</span>
+      <!-- Featured Telescope Project with Image Slider -->
+      <div class="project-featured glass-card" id="project-beyond-horizon">
+        <div class="project-gallery">
+          <div class="project-slider" id="project-slider">
+            <div class="slide active">
+              <img src="images/20260926_171130.jpg" alt="Beyond Horizon Automated Telescope Mount" />
+              <div class="slide-caption">Dual-axis Alt-Azimuth mount during field testing</div>
+            </div>
+            <div class="slide">
+              <img src="images/IMG-20260926-WA0003.jpg" alt="Beyond Horizon Telescope in Action" />
+              <div class="slide-caption">Optics assembly &amp; motorized motion control subsystem</div>
+            </div>
+          </div>
+          <div class="slider-controls">
+            <button class="slider-btn prev" id="slider-prev" aria-label="Previous image">
+              <i class="fa-solid fa-chevron-left"></i>
+            </button>
+            <div class="slider-dots" id="slider-dots">
+              <button class="dot active" data-i="0" aria-label="Slide 1"></button>
+              <button class="dot" data-i="1" aria-label="Slide 2"></button>
+            </div>
+            <button class="slider-btn next" id="slider-next" aria-label="Next image">
+              <i class="fa-solid fa-chevron-right"></i>
+            </button>
+          </div>
+          <div class="featured-badge"><i class="fa-solid fa-star"></i> Flagship Project</div>
         </div>
-        <h3 class="project-title">"Beyond Horizon"</h3>
-        <p class="project-subtitle">Automated Alt-Azimuth Telescope System</p>
-        <p class="project-desc">
-          Designed and built a refractor telescope with a motorised mount capable of real-time celestial object pointing and tracking. Developed custom motion control electronics with ESP32 microcontrollers and built the control software from scratch, including coordinate transformation and precise motor control.
 
-        </p>
-        <div class="project-tech">
-          <span class="tech-tag">ESP32</span>
-          <span class="tech-tag">Motor Control</span>
-          <span class="tech-tag">Stepper Motors</span>
-          <span class="tech-tag">Python</span>
-          <span class="tech-tag">Celestial Mechanics</span>
-          <span class="tech-tag">Mechanical Design</span>
+        <div class="project-info">
+          <div class="project-meta-row">
+            <span class="project-year"><i class="fa-regular fa-calendar"></i> 2024 &ndash; 2026</span>
+            <span class="project-category"><i class="fa-solid fa-microchip"></i> Robotics &amp; Optics</span>
+          </div>
+          <h3 class="project-title">"Beyond Horizon" &mdash; Automated Smart Alt-Azimuth Robotic Mount</h3>
+          <p class="project-subtitle">Automated Celestial Acquisition &amp; High-Precision Tracking System</p>
+          <p class="project-desc">
+            Engineered and fabricated a dual-axis motorized robotic mount for a custom refractor telescope (D80F900 doublet optical lens assembly). Synthesized custom high-ratio reduction gear trains in SolidWorks to minimize backlash and dampen tracking vibrations.
+          </p>
+          <p class="project-desc">
+            Programmed embedded C++ firmware on an ESP32 executing real-time equatorial coordinates (Right Ascension / Declination) to topocentric horizon coordinates (Altitude / Azimuth) transformations. Validated structural deflection and thermal gradient effects in COMSOL Multiphysics to guarantee optical axis collinearity.
+          </p>
+          <div class="tag-row">
+            <span class="tag accent">ESP32 Firmware</span>
+            <span class="tag accent">SolidWorks CAD</span>
+            <span class="tag accent">COMSOL FEA</span>
+            <span class="tag accent">Coordinate Kinematics</span>
+            <span class="tag accent">Precision Steppers</span>
+            <span class="tag accent">Closed-Loop Control</span>
+          </div>
+          <div class="project-cta-row">
+            <a href="https://github.com/M000nwalker/Beyond_Horizon_1" target="_blank" rel="noopener noreferrer" class="btn btn-primary" id="link-beyond-horizon">
+              <i class="fa-brands fa-github"></i> View on GitHub <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+          </div>
         </div>
-        <a href="https://github.com/M000nwalker/Beyond_Horizon_1" target="_blank" class="project-link"
-          id="link-beyond-horizon">
-          <i class="fa-brands fa-github"></i> View on GitHub
-          <i class="fa-solid fa-arrow-up-right-from-square"></i>
-        </a>
       </div>
-      <div class="project-visual">
-        <div class="telescope-anim">
-          <i class="fa-solid fa-circle-dot orbit-star s1"></i>
-          <i class="fa-solid fa-circle-dot orbit-star s2"></i>
-          <i class="fa-solid fa-circle-dot orbit-star s3"></i>
-          <i class="fa-solid fa-star orbit-star s4"></i>
-          <div class="telescope-body"><i class="fa-solid fa-telescope"></i></div>
+
+      <!-- Additional Engineering & Research Projects Subgrid -->
+      <div class="projects-subgrid">
+        <!-- Project 1 -->
+        <div class="sub-project-card glass-card">
+          <div class="sub-project-icon"><i class="fa-solid fa-fire-burner"></i></div>
+          <div class="sub-project-content">
+            <span class="sub-project-type">FEA &amp; Reliability Simulation</span>
+            <h4 class="sub-project-title">Thermomechanical Simulation of Power Module Solder Joints</h4>
+            <p class="sub-project-desc">
+              Constructed a 2D half-symmetry coupled thermal-structural FEA model in COMSOL Multiphysics replicating failure mechanisms in Single-Sided Cooling (SSC) power modules. Implemented nonlinear Anand Viscoplasticity for 60Sn40Pb solder and Morrow fatigue model to predict thermal cycle lifetimes under cyclic thermal loading (&Delta;T<sub>j</sub> &approx; 120&deg;C).
+            </p>
+            <div class="tag-row">
+              <span class="tag">COMSOL Multiphysics</span>
+              <span class="tag">Anand Viscoplasticity</span>
+              <span class="tag">Morrow Fatigue</span>
+              <span class="tag">Thermal-Stress Coupling</span>
+            </div>
+          </div>
         </div>
-        <div class="orbit-ring orbit-1"></div>
-        <div class="orbit-ring orbit-2"></div>
+
+        <!-- Project 2 -->
+        <div class="sub-project-card glass-card">
+          <div class="sub-project-icon"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="sub-project-content">
+            <span class="sub-project-type">Computational Mechanics Engine</span>
+            <h4 class="sub-project-title">Beam Deflection Solver via Macaulay's Singularity Method</h4>
+            <p class="sub-project-desc">
+              Developed a unified Python structural analysis engine utilizing Macaulay bracketed singularity functions. Eliminates manual multi-segment boundary matching and automates continuous shear force diagrams (SFD), bending moment diagrams (BMD), and elastic deflection profiles under complex multi-point loads and moments.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python</span>
+              <span class="tag">NumPy</span>
+              <span class="tag">Matplotlib</span>
+              <span class="tag">Boundary Value Formulations</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 3 -->
+        <div class="sub-project-card glass-card">
+          <div class="sub-project-icon"><i class="fa-solid fa-pen-nib"></i></div>
+          <div class="sub-project-content">
+            <span class="sub-project-type">Software &amp; Architecture</span>
+            <h4 class="sub-project-title">Rough Khata &mdash; STEM Typography &amp; Live LaTeX Engine</h4>
+            <p class="sub-project-desc">
+              Architected a cross-platform desktop application designed for mathematical derivation and live STEM annotation. Engineered an instant LaTeX typesetting engine utilizing KaTeX coupled with low-latency stylus and canvas rendering to handle intricate multi-line formulas seamlessly.
+            </p>
+            <div class="tag-row">
+              <span class="tag">TypeScript</span>
+              <span class="tag">React 19</span>
+              <span class="tag">Electron</span>
+              <span class="tag">KaTeX</span>
+              <span class="tag">HTML5 Canvas</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 4 -->
+        <div class="sub-project-card glass-card">
+          <div class="sub-project-icon"><i class="fa-solid fa-wave-square"></i></div>
+          <div class="sub-project-content">
+            <span class="sub-project-type">Numerical Dynamics</span>
+            <h4 class="sub-project-title">Simulation of Non-Linear Multi-Degree Dynamic Systems</h4>
+            <p class="sub-project-desc">
+              Engineered adaptive numerical integration routines (4th-order Runge-Kutta) to model forced non-linear oscillators and coupled multi-body mechanical systems. Computed phase-space trajectories, bifurcations, and non-linear damping dissipation across steady-state excitations.
+            </p>
+            <div class="tag-row">
+              <span class="tag">Python (SciPy)</span>
+              <span class="tag">C++</span>
+              <span class="tag">Runge-Kutta 4th</span>
+              <span class="tag">Phase-Space Analysis</span>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
-</div>
-
   </section>
 
   <!-- ======= ACHIEVEMENTS ======= -->
-
-  <section id="achievements" class="section achieve-section" aria-label="Achievements section">
+  <section id="achievements" class="section" aria-label="Achievements section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">05 &mdash; Achievements</span>
-        <h2 class="section-title">Milestones &amp; Awards</h2>
+        <h2 class="section-title">Milestones &amp; Honors</h2>
+        <div class="section-title-line"></div>
       </div>
 
-  <div class="achieve-grid">
+      <div class="achieve-grid">
+        <!-- 1. IBCOL -->
+        <div class="achieve-card glass-card gold-card" id="achieve-ibcol">
+          <div class="achieve-badge-pill">Global Honor</div>
+          <div class="achieve-icon gold"><i class="fa-solid fa-earth-americas"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2023</div>
+            <h3>Award of Merit &mdash; Global Finalist</h3>
+            <p class="achieve-org">6th International Blockchain Olympiad (IBCOL)</p>
+            <p class="achieve-desc">
+              Represented Bangladesh in Amsterdam, Netherlands, as part of Team GreyDevs. Formulated and presented an enterprise decentralized engineering architecture.
+            </p>
+            <div class="achieve-location"><i class="fa-solid fa-location-dot"></i> Amsterdam, Netherlands</div>
+          </div>
+        </div>
 
-    <div class="achieve-card" id="achieve-bdpho">
-      <div class="achieve-icon"><i class="fa-solid fa-trophy"></i></div>
-      <div class="achieve-body">
-        <div class="achieve-year">2022</div>
-        <h3>National Round Winner</h3>
-        <p class="achieve-org">Bangladesh Physics Olympiad (BdPhO)</p>
-        <p class="achieve-desc">Won the National Round of the Bangladesh Physics Olympiad 2022 and attended the national camp.</p>
-      </div>
-      <div class="achieve-glow"></div>
-    </div>
+        <!-- 2. BdPhO -->
+        <div class="achieve-card glass-card gold-card" id="achieve-bdpho">
+          <div class="achieve-badge-pill">National Winner</div>
+          <div class="achieve-icon gold"><i class="fa-solid fa-trophy"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2022</div>
+            <h3>National Round Winner &amp; IPhO Camp</h3>
+            <p class="achieve-org">Bangladesh Physics Olympiad (BdPhO)</p>
+            <p class="achieve-desc">
+              Won the National Round of BdPhO 2022 and was selected for the intensive National Coaching Camp in the International Physics Olympiad (IPhO) selection pipeline.
+            </p>
+            <div class="achieve-location"><i class="fa-solid fa-location-dot"></i> Dhaka, Bangladesh</div>
+          </div>
+        </div>
 
-    <div class="achieve-card" id="achieve-ibcol">
-      <div class="achieve-icon"><i class="fa-solid fa-award"></i></div>
-      <div class="achieve-body">
-        <div class="achieve-year">2023</div>
-        <h3>Award of Merit</h3>
-        <p class="achieve-org">International Blockchain Olympiad (IBCOL)</p>
-        <p class="achieve-desc">Earned the Award of Merit at IBCOL 2023, held in Amsterdam, Netherlands,
-          competing against teams from across the globe as part of Team GreyDevs.</p>
-        <div class="achieve-location">
-          <i class="fa-solid fa-location-dot"></i> Amsterdam, Netherlands
+        <!-- 3. BdMO 2023 -->
+        <div class="achieve-card glass-card" id="achieve-bdmo23">
+          <div class="achieve-icon"><i class="fa-solid fa-medal"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2023</div>
+            <h3>National Selection Winner</h3>
+            <p class="achieve-org">Bangladesh Mathematical Olympiad (BdMO)</p>
+            <p class="achieve-desc">
+              Clinched selection winner distinction in the National Selection Round of BdMO, administered by the Bangladesh Math Olympiad Committee.
+            </p>
+          </div>
+        </div>
+
+        <!-- 4. BdMO 2022 -->
+        <div class="achieve-card glass-card" id="achieve-bdmo22">
+          <div class="achieve-icon"><i class="fa-solid fa-award"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2022</div>
+            <h3>Divisional &amp; Regional Winner</h3>
+            <p class="achieve-org">Bangladesh Mathematical Olympiad (BdMO)</p>
+            <p class="achieve-desc">
+              Awarded both Divisional Winner and Regional Winner titles across competitive rounds in the national mathematical olympiad.
+            </p>
+          </div>
+        </div>
+
+        <!-- 5. Google Coding -->
+        <div class="achieve-card glass-card" id="achieve-google">
+          <div class="achieve-icon"><i class="fa-brands fa-google"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2021 &ndash; 2022</div>
+            <h3>Google Code Jam &amp; Kick Start</h3>
+            <p class="achieve-org">Google Global Competitions</p>
+            <p class="achieve-desc">
+              Advanced to Round 1 of Google Code Jam 2022 and earned Certificate of Accomplishment in Google Kick Start 2021 for advanced algorithmic deduction.
+            </p>
+          </div>
+        </div>
+
+        <!-- 6. Mental Math Challenge -->
+        <div class="achieve-card glass-card" id="achieve-mental-math">
+          <div class="achieve-icon"><i class="fa-solid fa-brain"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2022</div>
+            <h3>World Rank 18th</h3>
+            <p class="achieve-org">International Mental Math Challenge</p>
+            <p class="achieve-desc">
+              Achieved 18th place worldwide for high-speed mathematical calculation and arithmetic deduction against global competitors.
+            </p>
+          </div>
+        </div>
+
+        <!-- 7. Govt Scholarships -->
+        <div class="achieve-card glass-card" id="achieve-scholarship">
+          <div class="achieve-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2020 &amp; 2022</div>
+            <h3>Government Talentpool Scholarships</h3>
+            <p class="achieve-org">Ministry of Education, Bangladesh</p>
+            <p class="achieve-desc">
+              Awarded prestigious Talentpool Merit Scholarships for outstanding results in both HSC (2022) and SSC (2020) board examinations.
+            </p>
+          </div>
+        </div>
+
+        <!-- 8. NHSPC -->
+        <div class="achieve-card glass-card" id="achieve-nhspc">
+          <div class="achieve-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2021</div>
+            <h3>National Senior Programming Contestant</h3>
+            <p class="achieve-org">National High School Programming Contest (NHSPC)</p>
+            <p class="achieve-desc">
+              Competed in the National Senior Programming round solving algorithmic and data structure problems.
+            </p>
+          </div>
+        </div>
+
+        <!-- 9. Chemistry Olympiad -->
+        <div class="achieve-card glass-card" id="achieve-chem">
+          <div class="achieve-icon"><i class="fa-solid fa-flask"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2020</div>
+            <h3>Certificate of Achievement</h3>
+            <p class="achieve-org">11th Bangladesh Chemistry Olympiad</p>
+            <p class="achieve-desc">
+              Honored with Certificate of Achievement in the national round organized by the Bangladesh Chemical Society.
+            </p>
+          </div>
+        </div>
+
+        <!-- 10. IAAC -->
+        <div class="achieve-card glass-card" id="achieve-iaac">
+          <div class="achieve-icon"><i class="fa-solid fa-satellite"></i></div>
+          <div class="achieve-body">
+            <div class="achieve-year">2020</div>
+            <h3>International Participant</h3>
+            <p class="achieve-org">Intl. Astronomy &amp; Astrophysics Competition (IAAC)</p>
+            <p class="achieve-desc">
+              Participated in international astrophysics deduction and celestial mechanics problem solving.
+            </p>
+          </div>
         </div>
       </div>
-      <div class="achieve-glow"></div>
     </div>
-
-  </div>
+  </section>
 
   <!-- ======= ECA ======= -->
-
-  <section id="eca" class="section eca-section" aria-label="Extracurricular activities section">
+  <section id="eca" class="section" aria-label="Extracurricular activities section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">06 &mdash; Beyond Academics</span>
-        <h2 class="section-title">Extracurriculars</h2>
+        <h2 class="section-title">Leadership &amp; Passions</h2>
+        <div class="section-title-line"></div>
       </div>
 
-  <div class="eca-layout">
+      <div class="eca-layout">
+        <div class="eca-cards-col">
+          <!-- Chess.com Ambassador -->
+          <div class="eca-card glass-card highlight-card" id="eca-chesscom">
+            <div class="eca-icon-wrap"><i class="fa-solid fa-crown"></i></div>
+            <div class="eca-content">
+              <div class="eca-badge">Academic Year 2026 &ndash; 2027</div>
+              <h3>Official Campus Ambassador &mdash; Chess.com</h3>
+              <p>
+                Appointed university ambassador representing BUET. Organizing campus chess tournaments, collegiate outreach, workshops, and driving competitive engagement across the university.
+              </p>
+            </div>
+          </div>
 
-    <div class="eca-cards-col">
-      <div class="eca-card" id="eca-chess-fide">
-        <div class="eca-icon-wrap"><i class="fa-solid fa-chess-knight"></i></div>
-        <div class="eca-content">
-          <div class="eca-badge">FIDE Rated</div>
-          <h3>Competitive Chess Player</h3>
-          <p>Officially rated by FIDE, the World Chess Federation. Active competitive player participating in
-            rated tournaments.</p>
+          <!-- FIDE Rated Chess Player -->
+          <div class="eca-card glass-card" id="eca-chess-fide">
+            <div class="eca-icon-wrap"><i class="fa-solid fa-chess-knight"></i></div>
+            <div class="eca-content">
+              <div class="eca-badge">FIDE Rated</div>
+              <h3>Competitive Chess Player</h3>
+              <p>
+                Officially rated by the International Chess Federation (FIDE). Active tournament player representing institutional teams in national rating events and former Inter-House Chess Champion at Sylhet Cadet College.
+              </p>
+            </div>
+          </div>
+
+          <!-- BUET Chess Club Treasurer -->
+          <div class="eca-card glass-card" id="eca-buet-chess">
+            <div class="eca-icon-wrap"><i class="fa-solid fa-chess"></i></div>
+            <div class="eca-content">
+              <div class="eca-badge">Jul 2026 &ndash; Present</div>
+              <h3>Treasurer &mdash; BUET Chess Club</h3>
+              <p>
+                Directing financial oversight, budget allocations, sponsorship acquisition, and tournament logistics for campus and inter-university championships.
+              </p>
+            </div>
+          </div>
+
+          <!-- IMechE Affiliate -->
+          <div class="eca-card glass-card" id="eca-imeche">
+            <div class="eca-icon-wrap"><i class="fa-solid fa-gear"></i></div>
+            <div class="eca-content">
+              <div class="eca-badge">Professional Member</div>
+              <h3>Student Affiliate &mdash; IMechE, UK</h3>
+              <p>
+                Member of the Institution of Mechanical Engineers (UK), actively engaged with technical webinars, global engineering forums, and BUET IMechE student chapter events.
+              </p>
+            </div>
+          </div>
+
+          <!-- Traveller & Explorer -->
+          <div class="eca-card glass-card" id="eca-travel">
+            <div class="eca-icon-wrap"><i class="fa-solid fa-plane-departure"></i></div>
+            <div class="eca-content">
+              <div class="eca-badge">Exploration</div>
+              <h3>Global Explorer &amp; Culture Enthusiast</h3>
+              <p>
+                Passionate about discovering new cities, landscapes, and ideas. Represented Bangladesh in Amsterdam for IBCOL 2023, with a keen interest in observational astronomy and high-altitude hiking.
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
 
-      <div class="eca-card" id="eca-buet-chess">
-        <div class="eca-icon-wrap"><i class="fa-solid fa-chess"></i></div>
-        <div class="eca-content">
-          <div class="eca-badge">Since Jul 2026</div>
-          <h3>Treasurer — BUET Chess Club</h3>
-          <p>Responsible for financial oversight and event coordination for the BUET Chess Club. Organising
-            inter-university tournaments and managing club operations and budgets.</p>
+        <div class="eca-photos-col">
+          <div class="eca-photo-item glass-card">
+            <div class="photo-container">
+              <img src="images/chess1.jpg"
+                alt="Receiving prize from GM Niaz Morshed, the first Grandmaster of the Subcontinent" />
+            </div>
+            <div class="eca-photo-caption">
+              <strong>Award Ceremony:</strong> Receiving prize from GM Niaz Morshed &mdash; First Grandmaster of South Asia.
+            </div>
+          </div>
+          <div class="eca-photo-item glass-card">
+            <div class="photo-container">
+              <img src="images/chess2.jpg" alt="Intra-Hall Chess Championship Trophy" />
+            </div>
+            <div class="eca-photo-caption">
+              <strong>Championship Trophy:</strong> Intra-Hall Chess Tournament victory at BUET.
+            </div>
+          </div>
         </div>
       </div>
     </div>
-
-    <div class="eca-photos-col">
-      <div class="eca-photo-grid">
-        <div class="eca-photo-item">
-          <img src="images/chess1.jpg" alt="Receiving prize from GM Niaz Morshed, the first Grandmaster of the Subcontinent" />
-          <div class="eca-photo-caption">Receiving Prize from GM Niaz Morshed — First Grandmaster of the Subcontinent</div>
-        </div>
-        <div class="eca-photo-item">
-          <img src="images/chess2.jpg" alt="Chess tournament trophy at Intra Hall Chess Tournament" />
-          <div class="eca-photo-caption">Chess Tournament Trophy — Intra Hall Championship</div>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</div>
-
   </section>
 
   <!-- ======= CONTACT ======= -->
-
-  <section id="contact" class="section contact-section" aria-label="Contact section">
+  <section id="contact" class="section" aria-label="Contact section">
     <div class="container">
       <div class="section-header">
         <span class="section-label">07 &mdash; Contact</span>
         <h2 class="section-title">Let's Connect</h2>
-        <p class="section-sub">Open to research collaborations, internships, and exciting engineering challenges.</p>
+        <div class="section-title-line"></div>
+        <p class="section-sub">
+          Open to research collaborations, robotics &amp; CAE internships, and exciting technical challenges.
+        </p>
       </div>
 
-    <div class="contact-links">
-      <a href="mailto:mynurdoza@gmail.com" class="contact-link-card" id="contact-email">
-        <div class="clc-icon"><i class="fa-solid fa-envelope"></i></div>
-        <div class="clc-text">
-          <span class="clc-label">Email</span>
-          <span class="clc-value">mynurdoza@gmail.com</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square clc-arrow"></i>
-      </a>
+      <div class="contact-grid">
+        <a href="mailto:mynurdoza@gmail.com" class="contact-card glass-card" id="contact-email">
+          <div class="contact-icon"><i class="fa-solid fa-envelope"></i></div>
+          <span class="contact-label">Email</span>
+          <span class="contact-value">mynurdoza@gmail.com</span>
+          <span class="contact-action">Send Email <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
 
-      <a href="https://github.com/M000nwalker" target="_blank" class="contact-link-card" id="contact-github">
-        <div class="clc-icon"><i class="fa-brands fa-github"></i></div>
-        <div class="clc-text">
-          <span class="clc-label">GitHub</span>
-          <span class="clc-value">M000nwalker</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square clc-arrow"></i>
-      </a>
+        <a href="https://github.com/M000nwalker" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" id="contact-github">
+          <div class="contact-icon"><i class="fa-brands fa-github"></i></div>
+          <span class="contact-label">GitHub</span>
+          <span class="contact-value">github.com/M000nwalker</span>
+          <span class="contact-action">Follow Projects <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
 
-      <a href="https://www.linkedin.com/in/k-m-mynurdoza-399513441/" target="_blank" class="contact-link-card"
-        id="contact-linkedin">
-        <div class="clc-icon"><i class="fa-brands fa-linkedin-in"></i></div>
-        <div class="clc-text">
-          <span class="clc-label">LinkedIn</span>
-          <span class="clc-value">K.M. Mynurdoza</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square clc-arrow"></i>
-      </a>
+        <a href="https://www.linkedin.com/in/mynurdoza/" target="_blank" rel="noopener noreferrer" class="contact-card glass-card" id="contact-linkedin">
+          <div class="contact-icon"><i class="fa-brands fa-linkedin-in"></i></div>
+          <span class="contact-label">LinkedIn</span>
+          <span class="contact-value">linkedin.com/in/mynurdoza</span>
+          <span class="contact-action">Connect <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
 
-      <a href="tel:+8801880474147" class="contact-link-card" id="contact-phone">
-        <div class="clc-icon"><i class="fa-solid fa-phone"></i></div>
-        <div class="clc-text">
-          <span class="clc-label">Phone</span>
-          <span class="clc-value">+880 1880 474 147</span>
-        </div>
-        <i class="fa-solid fa-arrow-up-right-from-square clc-arrow"></i>
-      </a>
+        <a href="tel:+8801880474147" class="contact-card glass-card" id="contact-phone">
+          <div class="contact-icon"><i class="fa-solid fa-phone"></i></div>
+          <span class="contact-label">Phone</span>
+          <span class="contact-value">+880 1880 474 147</span>
+          <span class="contact-action">Call / WhatsApp <i class="fa-solid fa-arrow-right"></i></span>
+        </a>
 
-      <div class="contact-link-card static" id="contact-location">
-        <div class="clc-icon"><i class="fa-solid fa-location-dot"></i></div>
-        <div class="clc-text">
-          <span class="clc-label">Location</span>
-          <span class="clc-value">Dhaka, Bangladesh</span>
+        <div class="contact-card glass-card static" id="contact-location">
+          <div class="contact-icon"><i class="fa-solid fa-location-dot"></i></div>
+          <span class="contact-label">Location</span>
+          <span class="contact-value">Dhaka, Bangladesh</span>
+          <span class="contact-action">UTC+6 Timezone</span>
         </div>
       </div>
-    </div>
 
-    <div class="contact-cta-wrap">
-      <a href="mailto:mynurdoza@gmail.com" class="btn btn-primary" id="contact-direct-email">
-        <i class="fa-solid fa-paper-plane"></i> Send an Email
-      </a>
+      <div class="contact-cta">
+        <a href="mailto:mynurdoza@gmail.com" class="btn btn-primary btn-lg" id="contact-direct-email">
+          <i class="fa-solid fa-paper-plane"></i> Send Direct Message
+        </a>
+      </div>
     </div>
-
-  </div>
-</section>
+  </section>
 
   <!-- ======= FOOTER ======= -->
-
   <footer class="site-footer" role="contentinfo">
     <div class="footer-inner">
-      <span class="footer-logo">KM<span class="accent-dot">.</span></span>
-      <p class="footer-copy">&copy; <span id="footer-year"></span> K.M. Mynurdoza. Built with passion.</p>
+      <div class="footer-left">
+        <span class="footer-logo">KM<span class="accent-dot">.</span></span>
+        <p class="footer-tagline">Mechanical Engineer · Roboticist · Researcher</p>
+      </div>
+      <p class="footer-copy">&copy; <span id="footer-year">2026</span> K.M. Mynurdoza. Built with precision and passion.</p>
       <div class="footer-socials">
         <a href="mailto:mynurdoza@gmail.com" aria-label="Email"><i class="fa-solid fa-envelope"></i></a>
-        <a href="https://github.com/M000nwalker" target="_blank" aria-label="GitHub">
-          <i class="fa-brands fa-github"></i>
-        </a>
-        <a href="https://www.linkedin.com/in/mynurdoza/" target="_blank" aria-label="LinkedIn">
-          <i class="fa-brands fa-linkedin-in"></i>
-        </a>
+        <a href="https://github.com/M000nwalker" target="_blank" rel="noopener noreferrer" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/mynurdoza/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a>
       </div>
     </div>
   </footer>
 
   <script src="script.js"></script>
-
 </body>
 
 </html>
