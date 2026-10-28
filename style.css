@@ -1321,7 +1321,7 @@ ul {
 ================================================================ */
 .achieve-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-template-columns: repeat(2, 1fr);
   gap: 24px;
 }
 
@@ -1843,6 +1843,10 @@ ul {
   }
 
   .projects-subgrid {
+    grid-template-columns: 1fr;
+  }
+
+  .achieve-grid {
     grid-template-columns: 1fr;
   }
 
